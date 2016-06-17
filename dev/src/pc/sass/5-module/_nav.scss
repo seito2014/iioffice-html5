@@ -1,0 +1,33 @@
+/*
+#overview
+nav
+*/
+
+.nav {
+    padding: 8px 0;
+    .nav-inner {}
+    .nav-list {
+        margin: 0 -10px;
+    }
+    .nav-item {
+        padding: 0 10px;
+    }
+    .nav-link {
+        display: block;
+        padding: 0 10px;
+        text-align: center;
+        color: $color-default;
+        line-height: 1;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    @include query($break-large){
+        .nav-item {
+            padding: 0;
+        }
+        .nav-link {
+            font-size: 15px;
+        }
+    }
+}

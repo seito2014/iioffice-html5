@@ -1,0 +1,101 @@
+<%
+var id = "index";
+var title = "";
+var description = "sample text,sample text";
+var keywords = "word1,word2,word3";
+var type = "blog";
+%>
+
+<% include metadata/_head %>
+
+    <main class="wrapper">
+        <div class="hero" id="js-hero">
+            <h1 class="hero-heading">Hello world</h1>
+            <p class="hero-description">
+                <strong>- description -</strong>
+            </p>
+        </div>
+
+        <% include layout/_l-header %>
+
+        <section class="section">
+            <div class="l-container">
+                <h1 class="section-heading">Feature</h1>
+                <div class="section-features l-grid l-grid-col3 l-grid-md-col1">
+                    <ul class="section-features-inner l-grid-inner">
+                        <% var feature = ["HTML5", "CSS3", "JavaScript"]; %>
+                        <% for(var iFtr=0; iFtr< feature.length; iFtr++) { %>
+                        <li class="section-features-item l-grid-item">
+                            <article class="feature">
+                                <div class="feature-image">
+                                    <img src="images/feature<%= [iFtr + 1] %>.png" alt="<%= feature[iFtr + 1] %>.png"/>
+                                </div>
+                                <h1 class="feature-heading"><%= feature[iFtr] %></h1>
+                                <p class="feature-description">sample text sample<br>
+                                    text sample text<br>
+                                    sample text sample text</p>
+                            </article>
+                        </li>
+                        <% } %>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="l-container">
+                <h1 class="section-heading">Our Data</h1>
+                <div class="section-data">
+                    <figure class="data u-clear">
+                        <dl class="data-body">
+                            <dt class="data-body-heading">2016 our results</dt>
+                            <dd class="data-body-texts">
+                                sample text sample text sample text sample text<br>
+                                sample text sample text sample text sample<br>
+                                sample text sample text sample text<br>
+                                <br>
+                                sample text sample text sample text<br>
+                                sample text sample text sample text sample text
+                            </dd>
+                        </dl>
+                        <img class="data-img" src="images/data.png" alt="35% Okay 50% Fun 15% Terrible"/>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="l-container">
+                <h1 class="section-heading">News</h1>
+                <div class="section-news">
+                    <ul class="section-news-inner">
+                        <% for(var iNews=0; iNews< 3; iNews++) { %>
+                        <li class="section-news-item">
+                            <article class="news">
+                                <time class="news-date" datetime="2016-06-1<%= [8 - iNews] %>">06.1<%= [8 - iNews] %></time>
+                                <h1 class="news-heading">News title</h1>
+                                <p class="news-description">sample text sample text sample text sample text sample text sample text ...</p>
+                            </article>
+                        </li>
+                        <% } %>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <aside class="sponsors">
+            <div class="sponsors l-grid l-grid-md-col4">
+                <ul class="sponsors-inner l-grid-inner">
+                    <% var logo = ["IBM", "Microsoft", "twitter", "facebook"]; %>
+                    <% for(var iSp=0; iSp< 4; iSp++) { %>
+                    <li class="sponsors-item l-grid-item">
+                        <img src="images/client<%= [iSp + 1] %>.png" alt="<%= logo.iSp %>"/>
+                    </li>
+                    <% } %>
+                </ul>
+            </div>
+        </aside>
+    </main>
+
+<% include layout/_l-footer %>
+<% include metadata/_script %>
